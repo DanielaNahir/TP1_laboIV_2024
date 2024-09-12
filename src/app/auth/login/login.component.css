@@ -114,3 +114,7 @@ body {
     height:100px;
     border-radius: 200px;
 }
+
+.form-floating{
+    color: rgb(49, 49, 49);
+}
