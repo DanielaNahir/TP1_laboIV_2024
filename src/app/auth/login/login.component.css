@@ -122,3 +122,7 @@ body {
   position: relative;
   top: 50px;
 }
+
+.btn{
+  margin-bottom: 10px;
+}

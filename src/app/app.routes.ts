@@ -3,6 +3,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { Component } from '@angular/core';
 import { HomeComponent } from './page/home/home.component';
 import { QuienSoyComponent } from './page/quien-soy/quien-soy.component';
+import { RegistrarseComponent } from './auth/registrarse/registrarse.component';
 
 export const routes: Routes = [
     {
@@ -38,5 +39,9 @@ export const routes: Routes = [
     {
         path: "juego-propio",
         loadComponent: () => import("./page/games/juego-propio/juego-propio.component").then((m) => m.JuegoPropioComponent)
+    },
+    {
+        path: "registrarse",
+        component: RegistrarseComponent
     },
 ];
