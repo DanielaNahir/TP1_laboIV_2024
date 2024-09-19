@@ -1,23 +1,23 @@
-
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0e2c40;
 }
 
-.logo img{
-    width: 45px;
-    height: 45px;
-    border-radius: 150px;
+.logo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 150px;
 }
 
-.logo{
-    margin: 0.5rem;
+.logo {
+  margin: 0.5rem;
 }
 
 button {
-    margin: 0 20px;
-    background-color: transparent;
-    border-color: transparent;
-    color: aliceblue;
+  margin: 0 20px;
+  background-color: transparent;
+  border-color: transparent;
+  color: aliceblue;
 }

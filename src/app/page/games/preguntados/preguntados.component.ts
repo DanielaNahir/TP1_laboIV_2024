@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './preguntados.component.css'
 })
 export class PreguntadosComponent {
-
+  ngOnInit() {
+    console.log("hola");
+  }
 }

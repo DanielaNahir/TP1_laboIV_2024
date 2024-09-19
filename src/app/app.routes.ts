@@ -21,5 +21,22 @@ export const routes: Routes = [
     {
         path: 'quien-soy',
         component: QuienSoyComponent
-    }
+    },
+    
+    {
+        path: "ahorcado",
+        loadComponent: () => import("./page/games/ahorcado/ahorcado.component").then((m) => m.AhorcadoComponent)
+    },
+    {
+        path: "mayor-menor",
+        loadComponent: () => import("./page/games/mayor-menor/mayor-menor.component").then((m) => m.MayorMenorComponent)
+    },
+    {
+        path: "preguntados",
+        loadComponent: () => import("./page/games/preguntados/preguntados.component").then((m) => m.PreguntadosComponent)
+    },
+    {
+        path: "juego-propio",
+        loadComponent: () => import("./page/games/juego-propio/juego-propio.component").then((m) => m.JuegoPropioComponent)
+    },
 ];

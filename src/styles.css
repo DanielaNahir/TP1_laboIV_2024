@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-body
-{
-    background-color: rgb(41, 28, 28);
-    color: aliceblue;
+body {
+  background-color: #0e1d27;
+  color: aliceblue;
 }
