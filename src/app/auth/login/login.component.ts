@@ -23,9 +23,6 @@ export class LoginComponent {
       console.log(auth);
     })
   }
-  registro() {
-    createUserWithEmailAndPassword(this.auth, this.email, this.clave);
-  }
 
   login() {
     signInWithEmailAndPassword(this.auth, this.email, this.clave);
