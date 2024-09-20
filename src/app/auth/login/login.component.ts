@@ -33,4 +33,9 @@ export class LoginComponent {
 
     this.router.navigateByUrl("/home");
   }
+
+  accesoRapido(){
+    this.email = "prueba@prueba.com",
+    this.clave = "123456"
+  }
 }
