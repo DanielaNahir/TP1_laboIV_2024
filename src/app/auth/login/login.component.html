@@ -1,5 +1,5 @@
 <main class="form-signin w-100 m-auto">
-    <form>
+    <form >
         <div class="mb-4">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX-qpWv8_xMBydH97MP-M5mnYLe_d5rHj4cw&s"
                 alt="" width="72" height="57">
@@ -7,14 +7,16 @@
         <h1 class="h3 mb-3 fw-normal">Por favor, inicie sesión</h1>
 
         <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <input [(ngModel)]="email" type="email" class="form-control" id="floatingInput"
+                placeholder="name@example.com" name="email">
             <label for="floatingInput">Email</label>
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <input [(ngModel)]="clave" type="password" class="form-control" id="floatingPassword"
+                placeholder="Password" name="clave">
             <label for="floatingPassword">Contraseña</label>
         </div>
-        <button class="btn btn-primary w-100 py-2" type="submit">Iniciar Sesión</button>
+        <button class="btn btn-primary w-100 py-2" type="submit" (click)="login()">Iniciar Sesión</button>
         <button class="btn btn-primary w-100 py-2" routerLink="/registrarse">Registrarse</button>
         <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2024</p>
     </form>

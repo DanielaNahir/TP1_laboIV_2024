@@ -3,10 +3,11 @@ export class Usuario {
     apellido: string
     email: string
     clave: string
-    tipoUsuario: ETipoUsuario
+    tipoUsuario: string
+    estado: boolean = true;
 
     constructor(nombre:string, apellido:string, email:string, clave:string,
-        tipoUsuario:ETipoUsuario){
+        tipoUsuario:string){
         this.nombre = nombre,
         this.apellido = apellido,
         this.email = email,
