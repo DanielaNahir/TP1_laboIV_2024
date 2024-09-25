@@ -41,7 +41,7 @@ export const routes: Routes = [
         loadComponent: () => import("./page/games/juego-propio/juego-propio.component").then((m) => m.JuegoPropioComponent)
     },
     {
-        path: "registrarse",
-        component: RegistrarseComponent
+        path: 'registrarse',
+        loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
     },
 ];

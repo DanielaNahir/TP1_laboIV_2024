@@ -48,3 +48,14 @@ button{
     margin-bottom: 20px;
     margin-top: 20px;
 }
+
+.chat-button {
+    position: fixed; /* Mantiene el botón fijo */
+    bottom: 20px; /* Distancia desde la parte inferior */
+    right: 20px; /* Distancia desde la derecha */
+    z-index: 10; /* Asegúrate de que esté encima de otros elementos */
+}
+
+.chat-button button{
+    background-color: rgb(160, 66, 66);
+}
