@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { HomeComponent } from './page/home/home.component';
 import { QuienSoyComponent } from './page/quien-soy/quien-soy.component';
 import { RegistrarseComponent } from './auth/registrarse/registrarse.component';
+import { ChatComponent } from './page/chat/chat.component';
 
 export const routes: Routes = [
     {
@@ -24,11 +25,16 @@ export const routes: Routes = [
         component: QuienSoyComponent
     },
     {
-        path: 'games',
-        loadChildren: () => import('./page/games/games.module').then(m => m.GamesModule)
+        path: 'chat',
+        component: ChatComponent
     },
     {
         path: 'registrarse',
-        loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+        component: RegistrarseComponent
     },
+    {
+        path: 'games',
+        loadChildren: () => import('./page/games/games.module').then(m => m.GamesModule)
+    },
+    
 ];

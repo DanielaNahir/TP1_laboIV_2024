@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { FormGroup, FormsModule, NgModel } from '@angular/forms';
-import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from '@angular/fire/auth';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -13,22 +13,11 @@ import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from
 export class LoginComponent {
   email = '';
   clave = '';
+  authService = inject(AuthService);
 
-  private router = inject(Router);
 
-  private auth = inject(Auth);
-
-  ngOnInit(){
-    this.auth.onAuthStateChanged((auth) =>{
-      console.log(auth);
-    })
-  }
-
-  login() {
-    signInWithEmailAndPassword(this.auth, this.email, this.clave);
-    console.log("logeado");
-
-    this.router.navigateByUrl("/home");
+  login(){
+    this.authService.login(this.email, this.clave);
   }
 
   accesoRapido(){
