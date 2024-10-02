@@ -7,6 +7,20 @@
             <img class="error{{cantErrores}}" src="assets/ahorcado/{{cantErrores}}.png" alt="">
         }
     </div>
+
+    <div class="letras">
+        <div><strong>
+            @for (letra of palabra.split(''); track $index) {
+                @if (letrasDescubiertas.includes(letra)) {
+                    {{letra.toUpperCase()}}
+                }
+                @else {
+                    _
+                }
+            }
+        </strong></div>
+        
+    </div>
     <div class="teclado">
         @for (item of teclas; track $index) {
             <button [disabled]="teclasUsadas.includes(item)" (click)="clickTeclas(item)">
@@ -14,6 +28,10 @@
             </button>
         }
     </div>
-    
+    <div class="boton-salir">
+        <button (click)="salir()">
+            <img src="atras.png">
+        </button>
+    </div>
 </div>
 

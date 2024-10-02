@@ -32,14 +32,15 @@
 
 .error2{
     position: absolute;
-    top: 12%; /* Usa porcentaje para mantener la posición relativa */
+    top: 12%;
     left: 31.5%;
-
+    animation: balanceo 1s ease-in-out infinite;
 }
 .error3{
     position: absolute;
     top: 12.5%;
     left: 30.6%;
+    animation: balanceo 1s ease-in-out infinite;
 }
 .error4{
     position: absolute;
@@ -53,16 +54,16 @@
 }
 .error6{
     position: absolute;
-    top: 12.3%;
-    left: 33.4%;
+    top: 12.6%;
+    left: 33.3%;
 }
 .error7{
     position: absolute;
-    top: 12.7%;
-    left: 33.7%;
+    top: 12.8%;
+    left: 33.5%;
 }
 
-button{
+.teclado button{
     background-color: rgb(255, 255, 255);
     border-color: transparent;
     margin: 5px;
@@ -93,4 +94,50 @@ button{
     top: 15%;
     left: 25%;
     transform: translate(-25%, -15%);
+}
+
+.letras{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    color: black;
+    font-family: "Shadows Into Light";
+    font-size: 3rem;
+}
+
+.boton-salir button{
+    position: absolute;
+    top: 20px;
+    right: 1170px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.boton-salir img{
+    width: 50px;
+    height: 50px;
+}
+
+.error2, .error3, .error4, .error5, .error6, .error7 {
+    transform-origin: top center; /* Establece el pivote en la parte superior */
+    animation: balanceo 1.5s ease-in-out infinite; /* Añadir animación de columpio */
+}
+
+@keyframes balanceo {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg); /* Girar hacia un lado */
+    }
+    50% {
+        transform: rotate(-5deg); /* Girar hacia el otro lado */
+    }
+    75% {
+        transform: rotate(5deg); /* Girar hacia un lado */
+    }
+    100% {
+        transform: rotate(0deg); /* Regresar a la posición original */
+    }
 }
