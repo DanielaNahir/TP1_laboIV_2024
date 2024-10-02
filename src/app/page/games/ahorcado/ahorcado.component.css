@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+.shadows-into-light-regular {
+    font-family: "Shadows Into Light", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.imagens_ahorcado{
+    position: relative;
+}
+.contenedor{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    width: 1250px;
+    height: 520px;
+    padding: 20px;
+    background-color: rgb(188, 243, 157);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 1250px;
+    min-height: 520px;
+}
+
+.error1 img{
+    width: 50px;
+    height: 50px;
+}
+
+.error2{
+    position: absolute;
+    top: 12%; /* Usa porcentaje para mantener la posición relativa */
+    left: 31.5%;
+
+}
+.error3{
+    position: absolute;
+    top: 12.5%;
+    left: 30.6%;
+}
+.error4{
+    position: absolute;
+    top: 12.5%;
+    left: 31%;
+}
+.error5{
+    position: absolute;
+    top: 12.5%;
+    left: 31.7%;
+}
+.error6{
+    position: absolute;
+    top: 12.3%;
+    left: 33.4%;
+}
+.error7{
+    position: absolute;
+    top: 12.7%;
+    left: 33.7%;
+}
+
+button{
+    background-color: rgb(255, 255, 255);
+    border-color: transparent;
+    margin: 5px;
+    width: 50px;
+    font-family: "Shadows Into Light";
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+
+.teclado{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+}
+
+.error1{
+    width: 250px;
+    height: 250px;
+
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    transform: translate(-25%, -15%);
+}

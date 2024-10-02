@@ -1,1 +1,19 @@
-<p>ahorcado works!</p>
+<div class="contenedor">
+    <div class="imagen_ahorcado">
+        @if(primerError == true){
+            <img class="error1" src="assets/ahorcado/1.png" alt="">
+        }
+        @if(cantErrores > 1){
+            <img class="error{{cantErrores}}" src="assets/ahorcado/{{cantErrores}}.png" alt="">
+        }
+    </div>
+    <div class="teclado">
+        @for (item of teclas; track $index) {
+            <button [disabled]="teclasUsadas.includes(item)" (click)="clickTeclas(item)">
+                <strong>{{item}}</strong>
+            </button>
+        }
+    </div>
+    
+</div>
+
