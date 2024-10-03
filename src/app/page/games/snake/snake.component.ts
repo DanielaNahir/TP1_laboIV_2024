@@ -1,4 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild, HostListener } from '@angular/core';
+import { AlertJuegoService } from '../../../services/alert-juegos.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-juego-propio',
@@ -28,7 +30,7 @@ export class JuegoPropioComponent implements OnInit {
   //comida
   frutaImg: HTMLImageElement = new Image();
 
-  constructor() { }
+  constructor(private alertService: AlertJuegoService, private router: Router,) { }
 
   ngOnInit(): void {
     if (this.canvas) {
@@ -60,16 +62,24 @@ export class JuegoPropioComponent implements OnInit {
   loopJuego(): void {
     if (this.isGameOver) {
       clearInterval(this.gameInterval);
-      alert('Game Over! Click "Start Game" to play again.');
+      this.alertService.mostrarDerrota(() => {
+        this.iniciarJuego();
+      }, () => {
+        this.salir();
+      });
       return;
     }
-
+  
     this.limpiarCanvas();
     this.moverSnake();
     this.checkColisiones();
     this.dibujarSnake();
     this.dibujarFruta();
     this.actualizarRecord();
+  }
+  
+  salir() {
+    this.router.navigate(['/home']);
   }
 
   limpiarCanvas(): void {

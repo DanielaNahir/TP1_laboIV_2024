@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { and } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2'
-
+import { AlertJuegoService } from '../../../services/alert-juegos.service';
 @Component({
   selector: 'app-ahorcado',
   standalone: true,
@@ -18,15 +16,16 @@ export class AhorcadoComponent {
   letrasDescubiertas: string[] = [];
   primerError = false;
   cantErrores = 0;
+  record = 0;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private alertService: AlertJuegoService) {}
 
   obtenerPalabraAleatoria(): string {
     const randomIndex = Math.floor(Math.random() * this.palabras.length);
     return this.palabras[randomIndex];
   }
 
-  clickTeclas(letra:string) {
+  clickTeclas(letra: string) {
     this.teclasUsadas.push(letra);
 
     if (this.palabra.includes(letra)) {
@@ -53,36 +52,16 @@ export class AhorcadoComponent {
     this.teclasUsadas = [];
     this.cantErrores = 0;
     this.primerError = false;
+    this.record = 0;
     this.palabra = this.obtenerPalabraAleatoria();
   }
 
-  finalizarJuego(){
-    const swalWithBootstrapButtons = Swal.mixin({
-          customClass: {
-            confirmButton: "btn btn-success",
-            cancelButton: "btn btn-danger"
-          },
-          buttonsStyling: false
-        });
-        swalWithBootstrapButtons.fire({
-          title: "¡Perdiste!",
-          text: '¿Quieres volver a intentarlo? la palabra era "'+this.palabra+'"',
-          showCancelButton: true,
-          confirmButtonText: "Sí, reiniciar",
-          cancelButtonText: "No, salir",
-          reverseButtons: true,
-          backdrop: true,
-          allowOutsideClick: false,
-          imageUrl: 'perdiste.png',
-          imageWidth: 100,
-          imageHeight: 100,
-        }).then((result) => {
-          if (result.isConfirmed) {
-            this.reiniciarJuego();
-          } else{
-            this.salir();
-          }
-        });
+  finalizarJuego() {
+    this.alertService.mostrarDerrotaAhorcado(this.palabra, () => {
+      this.reiniciarJuego();
+    }, () => {
+      this.salir();
+    });
   }
 
   verificarVictoria() {
@@ -93,38 +72,16 @@ export class AhorcadoComponent {
     }
   }
 
-  mostrarVictoria(){
-    const swalWithBootstrapButtons = Swal.mixin({
-      customClass: {
-        confirmButton: "btn btn-success",
-        cancelButton: "btn btn-danger"
-      },
-      buttonsStyling: false
+  mostrarVictoria() {
+    this.alertService.mostrarVictoria(this.palabra, () => {
+      this.reiniciarJuego();
+    }, () => {
+      this.salir();
     });
-    swalWithBootstrapButtons.fire({
-      title: "¡Ganaste!",
-      text: '¡Felicidades! Has adivinado la palabra "' + this.palabra + '"',
-      confirmButtonText: "Volver a jugar",
-      cancelButtonText: "Salir",
-      showCancelButton: true, 
-      backdrop: true,
-      allowOutsideClick: false,
-      imageUrl: 'ganar.png',
-      imageWidth: 100,
-      imageHeight: 100,
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.reiniciarJuego();
-      } else {
-        this.salir();
-      }
-    });
-  
   }
 
   salir() {
     this.router.navigate(['/home']);
     this.reiniciarJuego();
   }
-
 }
