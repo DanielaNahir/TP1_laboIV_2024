@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { Auth, User } from '@angular/fire/auth';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,7 @@ export class HomeComponent {
   
   user: User | null = null;
   private router = inject(Router);
+  authServise = inject(AuthService);
   
   constructor(private auth: Auth) {}
 
