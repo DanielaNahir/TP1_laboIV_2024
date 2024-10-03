@@ -1,0 +1,55 @@
+
+.contenedor {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 1250px;
+    min-height: 520px;
+}
+
+canvas {
+    border: 1px solid black;
+    /* Agrega un borde negro alrededor del canvas */
+    background-image: url("../../../../../public/assets/snake/fondoSnake.jpg");
+    /* Aplica la misma imagen de fondo que el contenedor */
+    background-size: cover;
+    /* Asegura que la imagen de fondo cubra el tamaño del canvas */
+    background-position: center;
+}
+
+/* Contenedor de la información del juego */
+.game-info {
+    margin-top: 10px;
+    text-align: center;
+    color: #fff;
+    /* Color de texto blanco para la información */
+}
+
+/* Estilo para el puntaje y el botón */
+.game-info p {
+    font-size: 18px;
+    margin: 0;
+}
+
+.game-info button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.game-info button:hover {
+    background-color: #218838;
+}

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { JuegoPropioComponent } from './juego-propio.component';
+import { JuegoPropioComponent } from './snake.component';
 
 describe('JuegoPropioComponent', () => {
   let component: JuegoPropioComponent;
