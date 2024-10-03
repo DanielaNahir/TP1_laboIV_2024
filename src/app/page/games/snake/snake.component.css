@@ -16,23 +16,17 @@
 
 canvas {
     border: 1px solid black;
-    /* Agrega un borde negro alrededor del canvas */
     background-image: url("../../../../../public/assets/snake/fondoSnake.jpg");
-    /* Aplica la misma imagen de fondo que el contenedor */
     background-size: cover;
-    /* Asegura que la imagen de fondo cubra el tamaño del canvas */
     background-position: center;
 }
 
-/* Contenedor de la información del juego */
 .game-info {
     margin-top: 10px;
     text-align: center;
     color: #fff;
-    /* Color de texto blanco para la información */
 }
 
-/* Estilo para el puntaje y el botón */
 .game-info p {
     font-size: 18px;
     margin: 0;
@@ -52,4 +46,23 @@ canvas {
 
 .game-info button:hover {
     background-color: #218838;
+}
+
+.btn-salir {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #d49b44;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10; 
+}
+
+.btn-salir img{
+    width: 50px;
+    height: 50px;
 }
