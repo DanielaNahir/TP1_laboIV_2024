@@ -140,7 +140,7 @@ export class JuegoPropioComponent implements OnInit {
     if (this.canva) {
       this.canva.fillStyle = 'black';
       this.canva.font = '16px Arial';
-      this.canva.fillText(`Score: ${this.record}`, 10, 20);
+      this.canva.fillText(`Record: ${this.record}`, 10, 20);
     }
   }
 

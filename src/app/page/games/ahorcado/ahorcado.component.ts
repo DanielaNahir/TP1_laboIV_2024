@@ -73,7 +73,7 @@ export class AhorcadoComponent {
   }
 
   mostrarVictoria() {
-    this.alertService.mostrarVictoria(this.palabra, () => {
+    this.alertService.mostrarVictoriaAhorcado(this.record, this.palabra, () => {
       this.reiniciarJuego();
     }, () => {
       this.salir();
