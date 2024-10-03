@@ -1,0 +1,66 @@
+.espaciado{
+    height: 100px;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    max-width: 100%;
+}
+
+
+img{
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+}
+
+.yo{
+    border-radius: 100px;
+    width: 200px;
+    height: 200px;
+}
+
+.sobreMi{
+    width: 70%;
+    margin: 50px;
+    background-color: antiquewhite;
+    color: black;
+    border-radius: 30px;
+    padding: 30px;
+}
+
+.datos{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 30px 20px;
+    background-color: rgb(233, 197, 119);
+    padding: 20px;
+    border-radius: 30px;
+    border: 1px solid rgb(139, 119, 52);
+}
+
+.juego-propio{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.titulo{
+    background-color: rgb(124, 206, 17);
+    width: 50%;
+    border-radius: 30px;
+}
+
+.parrafo{
+    padding: 50px;
+    width: 75%;
+    font-size: 1.5rem;
+}
