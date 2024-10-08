@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Londrina+Sketch&display=swap');
+
+.ga-maamli-regular {
+    font-family: "Ga Maamli", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.contenedor{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    width: 1250px;
+    height: 520px;
+    padding: 20px;
+    background-color:rgb(39, 110, 42);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 1250px;
+    min-height: 520px;
+    
+}
+
+h1{
+    font-family: "Ga Maamli";
+}
+
+.game-container {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .cards {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+  }
+  
+    
+  .card {
+    background: linear-gradient(145deg, #fd5656, #d23d3d); /* Gradiente para simular un material */
+    padding: 25px;
+    border-radius: 15px;  /* Esquinas redondeadas para mayor suavidad */
+    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; /* Centra el contenido */
+    border: 8px solid #dd2a2a; /* Borde más grueso para simular una bandeja */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -10px -10px 10px rgba(27, 9, 9, 0.4); /* Sombra interna y externa para dar profundidad */
+    transform: translateY(10px); /* Eleva la bandeja */
+    position: relative;
+  }
+  
+  .buttons {
+    margin-top: 20px;
+  }
+  
+  .buttons button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #215172;
+    color: white;
+  }
+  
+  .buttons button:hover {
+    background-color: #0056b3;
+  }
+  
+  .result-message {
+    position: absolute;
+    left: 80%;
+    top: 40%;
+    font-size: 24px;
+    margin-top: 20px;
+    font-family: "Ga Maamli";
+  }
+  
+  .game-over {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 50px;
+  }
+  
+  .game-over button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .game-over button:hover {
+    background-color: #218838;
+  }
+
+  img{
+    width: 250px;
+    height: 260px;
+  }
+
+  .boton-salir button{
+    position: absolute;
+    top: 20px;
+    right: 1170px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.boton-salir img{
+    width: 50px;
+    height: 50px;
+}

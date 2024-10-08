@@ -1,1 +1,49 @@
-<p>mayor-menor works!</p>
+<div class="contenedor">
+    <div class="boton-salir">
+        <button (click)="salir()">
+            <img src="atras.png">
+        </button>
+    </div>
+    <div class="game-container">
+        <h1>Juego de Mayor o Menor</h1>
+
+
+
+        <div class="cards">
+            <div class="card">
+                <img [src]="'assets/mayor-menor/' + currentCard" alt="Carta actual" class="card-img">
+            
+                @if (!cardFlipped) {
+                <img src="assets/mayor-menor/carta-vuelta.png" alt="Carta vuelta" class="card-img">
+                }@else {
+                    <img [src]="'assets/mayor-menor/' + nextCard" alt="Carta siguiente" class="vuelta">
+                }
+                
+            </div>
+        </div>
+
+        <div class="puntaje">
+            <p>Puntaje: {{ score }}</p>
+        </div>
+
+        <div class="buttons">
+            <button (click)="guess(true)">Mayor</button>
+            <button (click)="guess(false)">Menor</button>
+        </div>
+
+        @if (resultMessage) {
+        <div class="result-message">
+            <p>{{ resultMessage }}</p>
+        </div>
+        }
+
+    </div>
+
+    <div *ngIf="gameOver" class="game-over">
+        <h2>Juego terminado</h2>
+        <p>Puntaje final: {{ score }}</p>
+        <button (click)="loop()">Jugar otra vez</button>
+    </div>
+
+
+</div>
