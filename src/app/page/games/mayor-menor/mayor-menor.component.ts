@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertJuegoService } from '../../../services/alert-juegos.service';
 
 @Component({
   selector: 'app-mayor-menor',
@@ -16,17 +17,25 @@ export class MayorMenorComponent {
   nextCard: string = "";
   resultMessage: string = "";
   score: number = 0;
-  gameOver: boolean = false;
+  gameOver: number = 2;
   cardFlipped: boolean = false;
 
-  constructor(private router: Router) {
+  constructor(private router: Router,  private alertService: AlertJuegoService) {
     this.loop();
   }
 
   loop() {
-    if (this.gameOver) {
-      this.score = 0;
-      this.gameOver = false;
+    if (this.score <= 0) {
+      this.gameOver -=1;
+      if(this.gameOver == 0){
+        this.gameOver = 2;
+        this.score = 0
+        this.alertService.mostrarDerrota(() =>{
+          this.loop()
+        }, () => {
+          this.salir()
+        })
+      }
     }
     
     this.currentCard = this.obtenerCartaRamdom();
@@ -72,5 +81,6 @@ export class MayorMenorComponent {
   salir() {
     this.router.navigate(['/home']);
     this.score = 0;
+    this.gameOver = 2;
   }
 }
