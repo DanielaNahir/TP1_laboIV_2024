@@ -17,7 +17,7 @@ export class MayorMenorComponent {
   resultMessage: string = "";
   score: number = 0;
   gameOver: boolean = false;
-  cardFlipped: boolean = false;  // Nuevo estado para controlar si la carta está vuelta
+  cardFlipped: boolean = false;
 
   constructor(private router: Router) {
     this.loop();
@@ -57,13 +57,13 @@ export class MayorMenorComponent {
       this.resultMessage = '¡Correcto!';
     } else if (esMayor == true && nextCardValue < currentCardValue){
       this.resultMessage = '¡Incorrecto!';
-      this.gameOver = true;
+      this.score -= 10;
     } else if (esMayor == false && nextCardValue < currentCardValue){
       this.score += 15;
       this.resultMessage = '¡Correcto!';
     } else if (esMayor == false && nextCardValue > currentCardValue){
       this.resultMessage = '¡Incorrecto!';
-      this.gameOver = true;
+      this.score -= 10;
     }
   
     setTimeout(() => this.loop(), 1500); 
