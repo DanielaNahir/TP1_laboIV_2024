@@ -1,1 +1,29 @@
-<p>preguntados works!</p>
+<div class="contenedor">
+
+    <div class="pokemon">
+        @if (imgPokemonBack != "") {
+            @if (vueltaPokemon) {
+                <img class="frente" [src]="imgPokemonFront" alt="">
+            } @else {
+                <img class="atras" [src]="imgPokemonBack" alt="">
+            }
+        }
+    </div>
+
+    <div class="record">
+        <h2><strong>Puntos: {{score}}</strong></h2>
+    </div>
+
+    <div class="botones">
+        @for (opcion of listaOpciones; track $index) {
+            <button (click)="clickPokemon(opcion)"><strong>{{opcion}}</strong></button>
+        }
+    </div>
+
+    <div class="boton-salir">
+        <button (click)="salir()">
+            <img src="atras.png">
+        </button>
+    </div>
+
+</div>

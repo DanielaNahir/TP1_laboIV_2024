@@ -20,7 +20,6 @@ export class AuthService {
 
   constructor() {
     this.auth.onAuthStateChanged((auth) =>{
-      console.log(auth);
       if(auth?.email){
         this.usuario = auth;
       }
