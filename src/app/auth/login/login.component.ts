@@ -20,8 +20,18 @@ export class LoginComponent {
     this.authService.login(this.email, this.clave);
   }
 
-  accesoRapido(){
+  accesoAdmin(){
     this.email = "admin@admin.com",
+    this.clave = "123456"
+  }
+
+  accesoGuest1(){
+    this.email = "dani@dani.com",
+    this.clave = "123456"
+  }
+
+  accesoGuest2(){
+    this.email = "user@user.com",
     this.clave = "123456"
   }
 }
