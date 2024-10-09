@@ -3,19 +3,19 @@
 </div>
 
 <div class="botones">
-    <button id="ahorcado" routerLink="/games/ahorcado">
+    <button id="ahorcado" (click)="clickJuegos('ahorcado')">
         <img src="assets/ahorcado.png" alt="">
         <p>AHORCADOS</p>
     </button>
-    <button id="juego-propio" routerLink="/games/snake">
+    <button id="juego-propio" (click)="clickJuegos('snake')">
         <img src="assets/logoSnake.png" alt="">
         <p>SNAKE</p>
     </button>
-    <button id="mayor-menor" routerLink="/games/mayor-menor">
+    <button id="mayor-menor" (click)="clickJuegos('mayor-menor')">
         <img src="assets/mayor-menor.png" alt="">
         <p>MAYOR MENOR</p>
     </button>
-    <button routerLink="/games/preguntados">
+    <button (click)="clickJuegos('preguntados')">
         <img src="assets/preguntados.png" alt="">
         <p>PREGUNTADOS</p>
     </button>
