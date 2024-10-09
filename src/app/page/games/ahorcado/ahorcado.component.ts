@@ -31,7 +31,8 @@ export class AhorcadoComponent {
     if (this.palabra.includes(letra)) {
       this.letrasDescubiertas.push(letra);
       if (this.letrasDescubiertas.length === new Set(this.palabra.split('')).size) {
-        this.mostrarVictoria();
+        this.record += 15;
+        setTimeout(() => this.reiniciarJuego(), 1500);
       }
     } else {
       if (this.cantErrores > 0 && this.cantErrores < 7) {
@@ -52,7 +53,6 @@ export class AhorcadoComponent {
     this.teclasUsadas = [];
     this.cantErrores = 0;
     this.primerError = false;
-    this.record = 0;
     this.palabra = this.obtenerPalabraAleatoria();
   }
 
@@ -64,14 +64,6 @@ export class AhorcadoComponent {
     });
   }
 
-  verificarVictoria() {
-    const todasLasLetrasDescubiertas = [...new Set(this.palabra.split(''))].every(letra => this.letrasDescubiertas.includes(letra));
-
-    if (todasLasLetrasDescubiertas) {
-      this.mostrarVictoria();
-    }
-  }
-
   mostrarVictoria() {
     this.alertService.mostrarVictoria('Tu record fue de ' + this.record, () => {
       this.reiniciarJuego();
@@ -80,8 +72,22 @@ export class AhorcadoComponent {
     });
   }
 
+  terminarJuego() {
+    if (this.record > 0) {
+      this.alertService.terminarJuego(
+        '', () => {}, () => {
+          this.salir();
+        }
+      );
+    } else {
+      this.salir();
+    }
+  }
+
+
   salir() {
-    this.router.navigate(['/home']);
     this.reiniciarJuego();
+    this.record = 0;
+    this.router.navigate(['/home']);
   }
 }

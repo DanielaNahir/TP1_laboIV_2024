@@ -1,14 +1,11 @@
 <div class="contenedor">
     <div class="boton-salir">
-        <button (click)="salir()">
+        <button (click)="terminarJuego()">
             <img src="atras.png">
         </button>
     </div>
     <div class="game-container">
         <h1>Juego de Mayor o Menor</h1>
-
-
-
         <div class="cards">
             <div class="card">
                 <img [src]="'assets/mayor-menor/' + currentCard" alt="Carta actual" class="card-img">

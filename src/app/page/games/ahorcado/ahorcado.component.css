@@ -119,6 +119,13 @@
     height: 50px;
 }
 
+.puntos{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: black;
+}
+
 .error2, .error3, .error4, .error5, .error6, .error7 {
     transform-origin: top center; /* Establece el pivote en la parte superior */
     animation: balanceo 1.5s ease-in-out infinite; /* Añadir animación de columpio */

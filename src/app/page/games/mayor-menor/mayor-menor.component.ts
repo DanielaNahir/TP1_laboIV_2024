@@ -78,6 +78,18 @@ export class MayorMenorComponent {
     setTimeout(() => this.loop(), 1500); 
   }
 
+  terminarJuego() {
+    if (this.score > 0) {
+      this.alertService.terminarJuego(
+        '', () => {}, () => {
+          this.salir();
+        }
+      );
+    } else {
+      this.salir();
+    }
+  }
+
   salir() {
     this.router.navigate(['/home']);
     this.score = 0;

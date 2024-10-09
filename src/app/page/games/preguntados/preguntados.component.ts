@@ -64,7 +64,7 @@ export class PreguntadosComponent {
       setTimeout(() => this.loop(), 1500);
     } else {
       
-      this.alertService.mostrarDerrota("El pokemon es " + this.nombrePokemon, () => {
+      this.alertService.mostrarDerrota(" El pokemon es " + this.nombrePokemon, () => {
         this.loop(),
         this.score = 0;
       }, () => {
@@ -92,6 +92,17 @@ export class PreguntadosComponent {
     }
     this.listaOpciones.sort(() => Math.random() - 0.5);
     console.log(this.listaOpciones);
+  }
+
+  terminarJuego(){
+    if (this.score > 0) {
+        this.alertService.terminarJuego("", () => {}, () => {
+        this.salir();
+      });
+    } else {
+      this.salir();
+    }
+    
   }
 
   salir() {
