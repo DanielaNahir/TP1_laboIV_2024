@@ -35,10 +35,6 @@ export class HomeComponent {
     });
   }
 
-  clickChat(){
-    this.chat = !this.chat;
-  }
-
   ngOnDestroy() {
     this.subscribe?.unsubscribe();
   }
