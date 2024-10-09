@@ -11,9 +11,15 @@
     </div>
 
     <div class="record">
-        <h2><strong>Puntos: {{score}}</strong></h2>
+        <div class="psyduck">
+            <img src="assets/preguntados/giphy.gif" alt="">
+        </div>
+        <div class="puntos">
+            <h2><strong>Puntos: {{score}}</strong></h2>      
+        </div>
     </div>
 
+    
     <div class="botones">
         @for (opcion of listaOpciones; track $index) {
             <button (click)="clickPokemon(opcion)"><strong>{{opcion}}</strong></button>

@@ -56,8 +56,8 @@ img{
     height: 70px;
     border-radius: 20px;
     margin: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
     background-color: rgb(243, 189, 11);
     color: rgb(0, 87, 218);
     border: 3px solid rgb(0, 87, 218);
@@ -65,7 +65,7 @@ img{
 
 .botones{
     position: absolute;
-    top: 270px;
+    top: 350px;
     right: 20px;
     display: flex;
     flex-direction: row;
@@ -77,9 +77,28 @@ img{
     position: absolute;
     top: 70px;
     right: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.puntos{
+    position: relative;
     background-color: aliceblue;
     color: black;
     padding: 20px 20px 10px;
     border-radius: 20px;
     border: 3px solid rgba(218, 185, 0, 0.795);
+    z-index: 0;
+}
+.psyduck{
+    position: relative;
+    right: -40px;
+    z-index: 2;
+}
+
+.psyduck img{
+    width: 90px;
+    height: 90px;
 }

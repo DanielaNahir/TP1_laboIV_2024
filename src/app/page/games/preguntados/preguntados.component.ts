@@ -85,7 +85,7 @@ export class PreguntadosComponent {
   }
 
   agregarOpciones(){
-    for (let index = 0; index < 2; index++) {
+    for (let index = 0; index < 3; index++) {
       this.generarOpcionAleatoria().subscribe((opcion) => {
         this.listaOpciones.push(opcion.name.toUpperCase())
       });
