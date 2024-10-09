@@ -36,14 +36,5 @@
             <p>{{ resultMessage }}</p>
         </div>
         }
-
     </div>
-
-    <div *ngIf="gameOver" class="game-over">
-        <h2>Juego terminado</h2>
-        <p>Puntaje final: {{ score }}</p>
-        <button (click)="loop()">Jugar otra vez</button>
-    </div>
-
-
 </div>

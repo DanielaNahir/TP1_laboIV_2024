@@ -64,7 +64,7 @@ export class PreguntadosComponent {
       setTimeout(() => this.loop(), 1500);
     } else {
       
-      this.alertService.mostrarDerrotaAhorcado(this.nombrePokemon, () => {
+      this.alertService.mostrarDerrota("El pokemon es " + this.nombrePokemon, () => {
         this.loop(),
         this.score = 0;
       }, () => {

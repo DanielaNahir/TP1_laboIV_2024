@@ -57,7 +57,7 @@ export class AhorcadoComponent {
   }
 
   finalizarJuego() {
-    this.alertService.mostrarDerrotaAhorcado(this.palabra, () => {
+    this.alertService.mostrarDerrota("La palabra era " + this.palabra, () => {
       this.reiniciarJuego();
     }, () => {
       this.salir();
@@ -73,7 +73,7 @@ export class AhorcadoComponent {
   }
 
   mostrarVictoria() {
-    this.alertService.mostrarVictoriaAhorcado(this.record, this.palabra, () => {
+    this.alertService.mostrarVictoria('Tu record fue de ' + this.record, () => {
       this.reiniciarJuego();
     }, () => {
       this.salir();

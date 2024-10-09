@@ -30,7 +30,7 @@ export class MayorMenorComponent {
       if(this.gameOver == 0){
         this.gameOver = 2;
         this.score = 0
-        this.alertService.mostrarDerrota(() =>{
+        this.alertService.mostrarDerrota("",() =>{
           this.loop()
         }, () => {
           this.salir()
