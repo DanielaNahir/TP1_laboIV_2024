@@ -116,3 +116,12 @@ body {
   .btn{
     margin-bottom: 10px;
   }
+
+  .form-floating div{
+    color: azure;
+  }
+
+  .espacio {
+    height: 80px;
+}
+

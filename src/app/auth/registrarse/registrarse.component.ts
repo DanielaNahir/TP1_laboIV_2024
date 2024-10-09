@@ -5,6 +5,7 @@ import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { DatabaseService } from '../../services/database.service';
 import { Usuario } from '../../classes/usuario';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -23,6 +24,25 @@ export class RegistrarseComponent {
   private auth = inject(Auth);
 
   async registro() {
+    const form = document.querySelector('form');
+    const formElements = form?.elements;
+    let isValid = true;
+
+    for (let element of <any>formElements) {
+      if (!element.checkValidity()) {
+        isValid = false;
+        break;
+      }
+    }
+    if (!isValid) {
+      Swal.fire({
+        title: 'Error',
+        text: 'Por favor, revisa los campos del formulario.',
+        icon: 'error',
+        confirmButtonText: 'Cerrar'
+      });
+      return
+    }
     try {
       await this.dbFirebase.agregarUsuario(this.usuario);
       await this.authService.registro(
@@ -37,5 +57,7 @@ export class RegistrarseComponent {
       console.error("Error durante el registro:", error);
     }
   }
+
+  
 }
 

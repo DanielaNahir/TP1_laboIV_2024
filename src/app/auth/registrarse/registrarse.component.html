@@ -1,25 +1,69 @@
+<div class="espacio">
+
+</div>
+
 <main class="form-signin w-100 m-auto">
-    <form>
+    <form #form="ngForm" (ngSubmit)="registro()" novalidate>
         <h1 class="h3 mb-3 fw-normal">Registro</h1>
 
+        <!-- Nombre -->
         <div class="form-floating">
-            <input [(ngModel)]="usuario.nombre" name="nombre" type="text" class="form-control" id="floatingName" placeholder="Nombre">
+            <input [(ngModel)]="usuario.nombre" name="nombre" type="text" class="form-control" id="floatingName"
+                placeholder="Nombre" required minlength="3">
             <label for="floatingName">Nombre</label>
+            @if (form.controls['nombre'].touched && form.controls['nombre'].invalid) {
+            @if (form.controls['nombre'].errors?.['required']) {
+            <div>El nombre es obligatorio.</div>
+            } @else if (form.controls['nombre'].errors?.['minlength']) {
+            <div>El nombre debe tener al menos 3 caracteres</div>
+            }
+            }
         </div>
+
+        <!-- Apellido -->
         <div class="form-floating">
-            <input [(ngModel)]="usuario.apellido" name="apellido" type="text" class="form-control" id="floatingSurname" placeholder="Apellido">
+            <input [(ngModel)]="usuario.apellido" name="apellido" type="text" class="form-control" id="floatingSurname"
+                placeholder="Apellido" required minlength="3">
             <label for="floatingSurname">Apellido</label>
+            @if (form.controls['apellido'].touched && form.controls['apellido'].invalid) {
+            @if (form.controls['apellido'].errors?.['required']) {
+            <div>El apellido es obligatorio.</div>
+            } @else if (form.controls['apellido'].errors?.['minlength']) {
+            <div>El apellido debe tener al menos 3 caracteres.</div>
+            }
+            }
         </div>
+
+        <!-- Email -->
         <div class="form-floating">
-            <input [(ngModel)]="usuario.email" name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <input [(ngModel)]="usuario.email" name="email" type="email" class="form-control" id="floatingInput"
+                placeholder="name@example.com" required email>
             <label for="floatingInput">Email</label>
+            @if (form.controls['email'].touched && form.controls['email'].invalid) {
+            @if (form.controls['email'].errors?.['required']) {
+            <div>El email es obligatorio.</div>
+            } @else if (form.controls['email'].errors?.['email']) {
+            <div>El email no tiene un formato válido.</div>
+            }
+            }
         </div>
+
+        <!-- Contraseña -->
         <div class="form-floating">
-            <input [(ngModel)]="usuario.clave" name="clave" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <input [(ngModel)]="usuario.clave" name="clave" type="password" class="form-control" id="floatingPassword"
+                placeholder="Password" required minlength="6">
             <label for="floatingPassword">Contraseña</label>
+            @if (form.controls['clave'].touched && form.controls['clave'].invalid) {
+            @if (form.controls['clave'].errors?.['required']) {
+            <div>La clave es obligatorio.</div>
+            } @else if (form.controls['clave'].errors?.['minlength']) {
+            <div>El email no tiene un formato válido.</div>
+            }
+            }
         </div>
-        <button class="btn btn-primary w-100 py-2" type="submit" (click)="registro()">Registrarse</button>
-        <button class="btn btn-primary w-100 py-2" routerLink="/login">Iniciar Sesión</button>
-        <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2024</p>
+
+        <!-- Botones -->
+        <button class="btn btn-primary w-100 py-2" type="submit">Registrarse</button>
+        <button class="btn btn-secondary w-100 py-2" routerLink="/login">Iniciar Sesión</button>
     </form>
 </main>
