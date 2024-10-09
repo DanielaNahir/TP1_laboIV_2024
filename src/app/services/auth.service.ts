@@ -6,6 +6,7 @@ import {
   Auth,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  updateProfile,
 } from '@angular/fire/auth';
 import { Usuario } from '../classes/usuario';
 
@@ -38,17 +39,23 @@ export class AuthService {
     this.router.navigateByUrl('/home');
   }
 
-  registro(email: string, clave: string) {
-    createUserWithEmailAndPassword(this.auth, email, clave)
-      .then(() => {
-        this.router.navigateByUrl('/home');
-      })
-      .catch((error) => {
-        this.handleError(error);
-        console.log('Error en la creación del usuario');
-      });
-  }
+  async registro(email: string, clave: string, nombre: string, apellido: string) {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(this.auth, email, clave);
 
+      await updateProfile(userCredential.user, {
+        displayName: `${nombre} ${apellido}`,
+      });
+
+      this.router.navigateByUrl('/home');
+      Swal.fire({
+        title: "Registro Exitoso",
+        icon: "success",
+      });
+    } catch (error) {
+      this.handleError(error);
+    }
+  }
   carrarSesion(){
     Swal.fire({
       title: "Estas seguro de cerrar sesion?",

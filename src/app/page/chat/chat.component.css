@@ -1,0 +1,114 @@
+/* Espacio entre la barra de mensajes y el área del chat */
+.espacio {
+    height: 80px;
+}
+
+/* Contenedor principal del chat */
+.chat-container {
+    background-image: url('.././../../../public/assets/fondo-chat.png');
+    width: 90%;
+    height: 80%; /* Contenedor principal del chat */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    overflow: hidden; /* No permitirá que el contenido se desborde */
+}
+
+/* Contenedor de los mensajes */
+.msj-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinea los mensajes desde arriba */
+    align-items: flex-start;
+    width: 100%;
+    max-height: 60vh; /* Máxima altura de los mensajes (60% de la altura de la pantalla) */
+    overflow-y: auto; /* Añade scroll solo si los mensajes exceden la altura */
+    padding-right: 10px; /* Espacio extra para la barra de scroll */
+    margin-bottom: 10px; /* Un pequeño espacio por abajo */
+}
+
+.mensaje {
+    background-color: rgba(65, 0, 71, 0.753);
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    width: 40%;
+    max-width: 90%;
+}
+
+.mensaje-propio {
+    background-color:  rgba(0, 4, 39, 0.726);
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    width: 40%;
+    max-width: 90%;
+    align-self: flex-end;
+}
+
+.form-floating {
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+}
+
+.form-floating button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.form-floating button:hover {
+    background-color: #45a049;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+
+
+label {
+    color: black;
+}
+
+h4{
+    font-size: 0.8rem;
+}
+
+p{
+    font-size:  1.5rem;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+.mensaje-propio h2{
+    color: #f3d217;
+}
+.mensaje h2{
+    color: #3dd41f;
+}
+
+.bi-arrow-up-short{
+    width: 35px;
+    height: 35px;
+}

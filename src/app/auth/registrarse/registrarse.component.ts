@@ -25,12 +25,17 @@ export class RegistrarseComponent {
   async registro() {
     try {
       await this.dbFirebase.agregarUsuario(this.usuario);
-      await this.authService.registro(this.usuario.email, this.usuario.clave);
+      await this.authService.registro(
+        this.usuario.email, 
+        this.usuario.clave, 
+        this.usuario.nombre,
+        this.usuario.apellido
+      );
 
       this.router.navigate(['/home']);
     } catch (error) {
       console.error("Error durante el registro:", error);
     }
   }
-
 }
+

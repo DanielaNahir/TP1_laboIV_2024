@@ -21,7 +21,7 @@ export class LoginComponent {
   }
 
   accesoRapido(){
-    this.email = "prueba@prueba.com",
+    this.email = "admin@admin.com",
     this.clave = "123456"
   }
 }

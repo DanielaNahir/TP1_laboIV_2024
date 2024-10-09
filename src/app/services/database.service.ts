@@ -1,6 +1,8 @@
 import { inject, Injectable } from '@angular/core';
 import { Usuario } from '../classes/usuario';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Mensaje } from '../classes/mensaje';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +19,15 @@ export class DatabaseService {
   traerUsuarios(){
     const usuariosCol = this.firestore.collection("usuarios");
     const usuarios = usuariosCol.valueChanges();
-    usuarios.subscribe((data) =>{
-      this.usuarios = data as Usuario[];
-    })
+    return usuarios;
+  }
+
+  guardarMensaje(mensaje:Mensaje){
+    const usuariosCol = this.firestore.collection("chat");
+    return usuariosCol.add({ ...mensaje });
+  }
+
+  cargarMensajes(): Observable<Mensaje[]> {
+    return this.firestore.collection<Mensaje>('chat', ref => ref.orderBy('fecha', 'asc')).valueChanges();
   }
 }
