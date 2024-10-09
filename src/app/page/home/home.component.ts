@@ -33,46 +33,6 @@ export class HomeComponent {
     this.auth.onAuthStateChanged(user => {
       this.user = user;
     });
-
-    const mensajes = this.firestore.cargarMensajes();
-
-    this.subscribe = mensajes.subscribe((result) => {
-      console.log(result);
-      this.mensajes = result as Mensaje[];
-    });
-  }
-
-  
-
-  enviarMensaje() {
-    if (this.msjNuevo.trim() !== "") {
-      try {
-        
-        const user = this.authService.usuario;
-
-        if (user) {
-          const nuevoMensaje: Mensaje = {
-            usuario: user.displayName || 'Usuario Anónimo',
-            email: user.email || 'correo@anonimo.com',
-            texto: this.msjNuevo,
-            fecha: new Date().toISOString()  
-          };
-
-          this.firestore.guardarMensaje(nuevoMensaje).then(() => {
-            console.log("Mensaje enviado correctamente");
-            this.msjNuevo = "";
-          }).catch((error) => {
-            console.error("Error al enviar el mensaje:", error);
-          });
-        } else {
-          console.log("No hay usuario logueado.");
-        }
-      } catch (error) {
-        console.error("Error en el envío del mensaje:", error);
-      }
-    } else {
-      console.log("El mensaje no puede estar vacío");
-    }
   }
 
   clickChat(){
